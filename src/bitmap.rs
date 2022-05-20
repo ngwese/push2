@@ -4,9 +4,9 @@
 // SPDX-License-Identifier: MIT
 //
 
-const DISPLAY_WIDTH: usize = 960;
-const DISPLAY_HEIGHT: usize = 160;
-const DISPLAY_PIXEL_COUNT: usize = DISPLAY_WIDTH * DISPLAY_HEIGHT;
+pub const DISPLAY_WIDTH: usize = 960;
+pub const DISPLAY_HEIGHT: usize = 160;
+pub const DISPLAY_PIXEL_COUNT: usize = DISPLAY_WIDTH * DISPLAY_HEIGHT;
 
 pub type Pixel = u16;
 
@@ -24,6 +24,11 @@ impl Bitmap {
     #[inline(always)]
     pub fn data(&self) -> &[u16] {
         &self.data
+    }
+
+    #[inline(always)]
+    pub fn data_mut(&mut self) -> &mut [u16] {
+        &mut self.data
     }
 
     #[inline(always)]
